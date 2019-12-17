@@ -1,18 +1,12 @@
 import React from 'react';
 import './index.css';
+import { Link } from "@reach/router"
 
 function Header() {
   return (
     <div className="Header">
       <header className="App-header">
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          ETH FOOTBALL
-        </a>
+      <Link to="/">Home</Link>
       </header>
     </div>
   );
