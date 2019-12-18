@@ -48,7 +48,6 @@ export default class Board extends React.Component {
     this.setState({ squareGrid: arr })
   }
 
-
   renderSquare(n, type, uniqueI) {
 
     if (type === "label") {
@@ -78,6 +77,11 @@ export default class Board extends React.Component {
 
 
   render() {
+    if (this.state.squareGrid.length === 0) {
+      return (
+        <div className="square-grid">Loading the board, wait a few seconds...</div>
+      )
+    }
     return (
       <div className="square-grid">
         {this.state.squareGrid.map((v, idx) => {

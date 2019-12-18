@@ -1,24 +1,30 @@
 import React from 'react';
+import { Link } from "@reach/router"
+import { MyWeb3Consumer } from '../../Web3Context';
 
-export default class Events extends React.Component {
-    render() {
-        let list = ["e1", "e2", "e4"]
-        return (
-          <div className="events-container">
+const Events = (props) => (
+  <MyWeb3Consumer>
+    {({ gameList }) => {
+      return (
+        <div className="events-container">
+          <EventList events={gameList} />
+        </div>
+      )
+    }}
+  </MyWeb3Consumer>
+);
 
-            <EventList events={list}/>
-          </div>
-        );
-      }
-}
 
 
 function EventList(props) {
-    const events = props.events;
-    const listItems = events.map((e) =>
-      <li>{e}</li>
-    );
-    return (
-      <ul>{listItems}</ul>
-    );
+  const events = props.events;
+
+  const listItems = events.map((e) =>
+    <li key={e.gameId} ><Link to={"/game/" + e.gameId}>{e.metadata}</Link></li>
+  );
+  return (
+    <ul>{listItems}</ul>
+  );
 }
+
+export default Events;

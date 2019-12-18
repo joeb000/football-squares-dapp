@@ -1,15 +1,35 @@
 import React, { Component } from "react";
 import getWeb3 from "./getWeb3";
-import TokenContract from "./contracts/local/FootballToken.json";
-import FootballContract from "./contracts/local/Football.json";
+import TokenContract from "./contracts/rinkeby/FootballToken.json";
+import FootballContract from "./contracts/rinkeby/Football.json";
 
 const Context = React.createContext();
 
 
 export class MyWeb3Provider extends Component {
-  state = {
-    loaded: false
+  constructor(props) {
+    console.log("CONSTRUCT")
+    super(props);
+    this.state = {
+      loaded: false,
+      gameList: []
+    }
   }
+  
+  setLoaded() {
+    this.setState({
+      loaded: true
+    })
+  }
+
+  addGameToList(gameEvent) {
+    //let game = event.returned
+    this.setState({
+      games: gameEvent
+    })
+  }
+
+
   async componentDidMount() {
     try {
       // Get network provider and web3 instance.
@@ -22,18 +42,34 @@ export class MyWeb3Provider extends Component {
       const networkId = await web3.eth.net.getId();
 
       console.log("networkId", typeof networkId, networkId)
-      const deployedNetwork = TokenContract.networks['5777'];
+      const deployedNetwork = TokenContract.networks['4'];
       const tokenContract = new web3.eth.Contract(
         TokenContract.abi,
         deployedNetwork && deployedNetwork.address,
       );
 
-      const fbdeployedNetwork = FootballContract.networks['5777'];
+      const fbdeployedNetwork = FootballContract.networks['4'];
 
       const squaresContract = new web3.eth.Contract(
         FootballContract.abi,
         fbdeployedNetwork && fbdeployedNetwork.address,
       );
+
+      console.log(this.state)
+
+      squaresContract.events.GameCreated({
+        fromBlock: 0
+      }, (error, event) => {
+        console.log(event)
+        console.log(this.state)
+
+        let {gameId, owner, token, metadata} = event.returnValues
+        let g = {gameId, owner, token, metadata}
+        console.log(gameId)
+        
+        this.setState({ gameList: [...this.state.gameList, g] }) //simple value
+
+      })
 
       // Set web3, accounts, and contract to the state, and then proceed with an
       // example of interacting with the contract's methods.
@@ -49,11 +85,6 @@ export class MyWeb3Provider extends Component {
 
   }
 
-  setLoaded() {
-    this.setState({
-      loaded: true
-    })
-  }
 
 
   render() {

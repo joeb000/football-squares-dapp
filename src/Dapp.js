@@ -14,15 +14,14 @@ const Dapp = (props) => (
       }
       console.log(loaded, tokenContract)
       return (
-      <div className="App">
-        <h1>Football Squares Dapp context!</h1>
-        <div>
-          <Game token={tokenContract} footballContract={squaresContract} gid={props.gid} />
+        <div className="App">
+          <h1>Football Squares Dapp context!</h1>
+          <div>
+            <Game token={tokenContract} footballContract={squaresContract} gid={props.gid} />
+          </div>
         </div>
-      </div>
-
-
-    )}}
+      )
+    }}
   </MyWeb3Consumer>
 );
 

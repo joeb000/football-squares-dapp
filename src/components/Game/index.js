@@ -7,6 +7,7 @@ import Board from '../Board'
       
       super(props);
       this.state = {
+        gameData: null,
         sqVals: []
       };
       this.checkBalance()
@@ -28,11 +29,19 @@ import Board from '../Board'
       const rows = await this.props.footballContract.methods.getGameRows(this.props.gid).call();
       //console.log(rows)
 
+      const data = await this.props.footballContract.methods.games(this.props.gid).call();
+      console.log("data", data)
+
+
+      this.setState({
+        gameData: data
+      })
+
+
       let sqVals = []
       for (let i = 0; i < 100; i++) {
         const a = await this.props.footballContract.methods.getSquareValue(this.props.gid, i).call();
         sqVals.push(a)
-        
       }
 
 
@@ -46,6 +55,7 @@ import Board from '../Board'
     render() {
       return (
         <div className="game">
+          <GameMeta gameData={this.state.gameData}/>
           <div className="game-board">
             <Board
               contract={this.props.footballContract}
@@ -60,5 +70,28 @@ import Board from '../Board'
         </div>
       );
     }
+  }
+  
+  function GameMeta(props) {
+    if (props.gameData) {
+      return (
+        <div className="game-meta">
+              <label>Name (meta):</label>{props.gameData.meta}
+              <br></br>
+              <label>Owner:</label>{props.gameData.owner}
+              <br></br>
+              <label>Token:</label>{props.gameData.erc20RewardToken}
+              <br></br>
+              <label>Price per square:</label>{props.gameData.squarePrice}
+              <br></br>
+              <label>Total tokens in pot:</label>{props.gameData.totalPot}
+            </div>
+      );
+    }
+    return (
+      <div className="game-meta">
+            Loading meta properties...
+          </div>
+    );
   }
   

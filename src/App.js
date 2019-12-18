@@ -5,6 +5,7 @@ import './App.css';
 import { Router } from "@reach/router"
 import Home from "./pages/Home"
 import Dapp from "./Dapp"
+import CreateGame from "./pages/CreateGame"
 import { MyWeb3Provider } from "./Web3Context"
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
         <Router>
           <Home path="/" />
           <Dapp path="game/:gid" />
-
+          <CreateGame path="/create" />
         </Router>
       </MyWeb3Provider>
     </div>
