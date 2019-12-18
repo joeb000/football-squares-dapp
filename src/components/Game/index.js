@@ -1,4 +1,4 @@
-import React, { useContext }from 'react';
+import React from 'react';
 import Board from '../Board'
 
  export default class Game extends React.Component {
@@ -18,15 +18,15 @@ import Board from '../Board'
 
     checkBalance = async () => {
 
-      console.log(this.props.gid)
-      console.log(this.props.footballContract)
+      //console.log(this.props.gid)
+      //console.log(this.props.footballContract)
       ///console.log("stz", this.contextType)
 
       //const response = await this.contextType.token.methods.balanceOf(this.props.accounts[0]).call();
       const cols = await this.props.footballContract.methods.getGameColumns(this.props.gid).call();
-      console.log(cols)
+      //console.log(cols)
       const rows = await this.props.footballContract.methods.getGameRows(this.props.gid).call();
-      console.log(rows)
+      //console.log(rows)
 
       let sqVals = []
       for (let i = 0; i < 100; i++) {
