@@ -21,7 +21,7 @@
   }
   .navbar-collapse {
     // change on mobile
-    margin-right: -80px;
+    margin-right: -100px;
     .navbar-nav {
       margin-left: auto;
       @include breakpoint-min($tablet-lg-landscape) {

@@ -33,6 +33,7 @@
             float: left;
           }
           .hero-subcopy {
+            color: white;
             font-size: 16px;
             font-weight: 500;
             margin-top: 50px;
@@ -43,6 +44,11 @@
     }
     &.col-right {
       background-color: white;
+      background-image: url("../../img/hero-sidebar-bg.png");
+      background-repeat: no-repeat;
+      background-position-x: -114%;
+      background-position-y: -37%;
+      background-size: 80%;
       .hero-sidebar-copy-container {
         margin-top: 60px;
         .hero-sidebar-header {
@@ -57,7 +63,8 @@
         .hero-sidebar-button-container {
           display: block;
           margin-top: 60px;
-          button {
+          .btn-primary,
+          .btn-tertiary {
             width: 100%;
             margin: 20px 0;
             box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.12);

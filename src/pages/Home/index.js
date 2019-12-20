@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "@reach/router"
+
+import icon from '../../img/metamask-icon.png'
+
 class Home extends Component {
 
     render() {
@@ -34,7 +37,31 @@ class Home extends Component {
             </section>
 
             <section className="component__info">
-              
+              <div className="container-fluid component__info--container">
+                <div className="row component__info--row title-row">
+                  <div className="col-12 component__info--col">
+                    <h2 className="section-title">How Does It Work?</h2>
+                    <hr className="section-title-decorate"/>
+                  </div>
+                </div>
+                <div className="row component__info--row column-row">
+                  <div className="col-4 component__info--col">
+                    <img className="info-icon" src={icon} alt={"metamask icon"}/>
+                    <h3 className="column-title">Requires MetaMask</h3>
+                    <p>Bacon ipsum dolor amet jowl salami andouille ham. Ground round bacon ribeye pastrami rump, meatball picanha short loin cow kevin ham. Tail buffalo beef ribs ham hock strip steak prosciutto. Picanha rump frankfurter pork belly filet mignon. Capicola leberkas brisket turkey pastrami. Corned beef porchetta kevin ham.</p>
+                  </div>
+                  <div className="col-4 component__info--col">
+                    <i class="fa fa-users" aria-hidden="true"></i>
+                    <h3 className="column-title">Invite Friends!</h3>
+                    <p>Bacon ipsum dolor amet jowl salami andouille ham. Ground round bacon ribeye pastrami rump, meatball picanha short loin cow kevin ham. Tail buffalo beef ribs ham hock strip steak prosciutto. Picanha rump frankfurter pork belly filet mignon. Capicola leberkas brisket turkey pastrami. Corned beef porchetta kevin ham.</p>
+                  </div>
+                  <div className="col-4 component__info--col">
+                    <i class="fa fa-trophy" aria-hidden="true"></i>
+                    <h3 className="column-title">Join Current Games!</h3>
+                    <p>Bacon ipsum dolor amet jowl salami andouille ham. Ground round bacon ribeye pastrami rump, meatball picanha short loin cow kevin ham. Tail buffalo beef ribs ham hock strip steak prosciutto. Picanha rump frankfurter pork belly filet mignon. Capicola leberkas brisket turkey pastrami. Corned beef porchetta kevin ham.</p>
+                  </div>
+                </div>
+              </div>
             </section>
             {/* <Events/> */}
           </div>
