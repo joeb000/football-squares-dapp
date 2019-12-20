@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "05e0edd03254fbcf52617644e8d627ba",
+    "revision": "30378da7e6698f1361b2fb3af71296e0",
     "url": "/football-squares-dapp/index.html"
   },
   {
-    "revision": "b53e40f457fc4b3e5ec0",
-    "url": "/football-squares-dapp/static/css/main.6a7fdf9d.chunk.css"
+    "revision": "eceee58bed2848ea48b3",
+    "url": "/football-squares-dapp/static/css/main.0eb398e2.chunk.css"
   },
   {
     "revision": "c40c039442b2a3abda68",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/football-squares-dapp/static/js/2.80110cb7.chunk.js.LICENSE"
   },
   {
-    "revision": "b53e40f457fc4b3e5ec0",
-    "url": "/football-squares-dapp/static/js/main.9406f70b.chunk.js"
+    "revision": "eceee58bed2848ea48b3",
+    "url": "/football-squares-dapp/static/js/main.3ca8b5c0.chunk.js"
   },
   {
     "revision": "c6273bf5dd713fa81e56",

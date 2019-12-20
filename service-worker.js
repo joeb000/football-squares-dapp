@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/football-squares-dapp/precache-manifest.50bfc92a9c4bf7c704ecf2754a97652e.js"
+  "/football-squares-dapp/precache-manifest.4d730fdc0d6a5da43659da261ad545a4.js"
 );
 
 self.addEventListener('message', (event) => {
