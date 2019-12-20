@@ -12,7 +12,6 @@ class ReadBalance extends Component {
   }
 
   getBalance = async () => {
-    console.log("tap")
     let b = await this.props.tokenContract.methods.balanceOf(window.ethereum.selectedAddress).call();
     this.setState({balance: b})
   };

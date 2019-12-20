@@ -5,7 +5,12 @@ class CreateForm extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            value: '' 
+            value: null,
+            home: null,
+            away: null,
+            days: null,
+            token: null,
+            price: null
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -13,12 +18,14 @@ class CreateForm extends Component {
     }
 
     handleChange(event) {
-        this.setState({ value: event.target.value });
+        console.log(event.target.name)
+        this.setState({ [event.target.name]: event.target.value });
         console.log(event.target.value)
     }
 
     handleSubmit(event) {
-        console.log('A name was submitted: ' + this.state.value);
+        
+        console.log('A name was submitted: ',this.state);
         event.preventDefault();
     }
 
@@ -27,18 +34,18 @@ class CreateForm extends Component {
             <form onSubmit={this.handleSubmit}>
                 <label>
                     Home Team:
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
+            <input name="home" type="text" value={this.state.value} onChange={this.handleChange} />
                 </label>
                 <br></br>
                 <label>
                     Away Team:
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
+            <input name="away" type="text" value={this.state.value} onChange={this.handleChange} />
                 </label>
                 <br></br>
 
                 <label>
                     Game Date Time:
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
+            <input name="days" type="text" value={this.state.value} onChange={this.handleChange} />
                 </label>
                 <br></br>
 
@@ -55,7 +62,7 @@ class CreateForm extends Component {
                 <br></br>
                 <label>
                 Square Price:
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
+            <input name="price" type="text" value={this.state.value} onChange={this.handleChange} />
                 </label>
                 <br></br>
                 <input type="submit" value="Submit" /> 
