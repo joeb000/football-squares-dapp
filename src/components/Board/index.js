@@ -27,7 +27,6 @@ export default class Board extends React.Component {
     };
   }
   componentDidUpdate = async () => {
-
     if (this.props.columnLabels && this.props.rowLabels && this.state.squareGrid.length === 0) {
       this.createSquareGrid()
     }

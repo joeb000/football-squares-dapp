@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import getWeb3 from "./getWeb3";
 import TokenContract from "./contracts/rinkeby/FootballToken.json";
 import FootballContract from "./contracts/rinkeby/Football.json";
+import FaucetContract from "./contracts/rinkeby/Faucet.json";
 
 const Context = React.createContext();
 
 
 export class MyWeb3Provider extends Component {
   constructor(props) {
-    console.log("CONSTRUCT")
     super(props);
     this.state = {
       loaded: false,
@@ -49,13 +49,17 @@ export class MyWeb3Provider extends Component {
       );
 
       const fbdeployedNetwork = FootballContract.networks['4'];
-
       const squaresContract = new web3.eth.Contract(
         FootballContract.abi,
         fbdeployedNetwork && fbdeployedNetwork.address,
       );
 
-      console.log(this.state)
+      const faucetdNetwork = FaucetContract.networks['4'];
+      const faucetContract = new web3.eth.Contract(
+        FaucetContract.abi,
+        faucetdNetwork && faucetdNetwork.address,
+      );
+
 
       squaresContract.events.GameCreated({
         fromBlock: 0
@@ -74,7 +78,7 @@ export class MyWeb3Provider extends Component {
       // Set web3, accounts, and contract to the state, and then proceed with an
       // example of interacting with the contract's methods.
       console.log("set ctx state", this.state.loaded)
-      this.setState({ web3, accounts, squaresContract, tokenContract }, this.setLoaded);
+      this.setState({ web3, accounts, squaresContract, tokenContract, faucetContract }, this.setLoaded);
     } catch (error) {
       // Catch any errors for any of the above operations.
       alert(

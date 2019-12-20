@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Events from "../../components/Events"
+import { Link } from "@reach/router"
 class Home extends Component {
 
     render() {
@@ -23,8 +23,8 @@ class Home extends Component {
                       <h2 className="hero-sidebar-header">Start Playing!</h2>
                       <hr className="text-decorate-sidebar"/>
                       <div className="hero-sidebar-button-container">
-                        <button className="btn-primary">Create A Game</button>
-                        <button className="btn-tertiary">Join A Game</button>
+                        <Link to="/create" className="btn-primary">Create A Game</Link>
+                        <Link to="/list" className="btn-tertiary">Join A Game</Link>
                       </div>
                     </div>
                     
@@ -32,11 +32,11 @@ class Home extends Component {
                 </div>
               </div>
             </section>
-            <Events/>
+            {/* <Events/> */}
           </div>
 
         );
       }
 }
-    
-    export default Home;
+
+export default Home;
