@@ -1,0 +1,25 @@
+.btn-primary {
+  color: white;
+  background-color: $brand-blue;
+  border-color: $brand-blue;
+  &:hover,
+  &:active {
+    color: white;
+    background-color: lighten($brand-blue, 10%) !important;
+    border-color: lighten($brand-blue, 10%) !important;
+  }
+  @extend .button-global;
+}
+
+.btn-tertiary {
+  color: $brand-green;
+  background-color: transparent;
+  border-color: $brand-green;
+  &:hover,
+  &:active {
+    color: white;
+    background-color: $brand-green !important;
+    border-color: $brand-green !important;
+  }
+  @extend .button-global;
+}

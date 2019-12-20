@@ -1,0 +1,120 @@
+@import url("https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css");
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap');
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import "reset";
+@import "variables";
+@import "mixins";
+
+html,
+body {
+ height: 100%;
+ position: relative;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.header-level__two {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.header-level__three {
+  font-size: 20px;
+}
+
+body,
+p {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.8;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  &:hover {
+    color: inherit;
+    text-decoration: none;
+  }
+  &:focus {
+    color: none !important;
+  }
+}
+
+strong {
+  font-weight: bold;
+}
+
+// buttons
+.button-global {
+  letter-spacing: 0;
+  line-height: .9em;
+  transition: .25s;
+  display: block;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: 'Open Sans', sans-serif;
+  width: auto;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 20px;
+  margin: 0 0 1.2vh 0;
+  padding: 1.6vh 1.8vh;
+  text-transform: uppercase;
+  outline: 0;
+  &:focus {
+    box-shadow: none !important;
+  }
+  @include breakpoint($phone-lg) {
+    width: 100%;
+  }
+}
+
+button {
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+}
+
+// section 
+.section-padding {
+  padding: 140px;
+  @include breakpoint($tablet-lg) {
+    padding: 60px 40px;
+  }
+}
+
+.section-title {
+  font-size: 48px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  @include breakpoint($phone-lg) {
+    font-size: 30px;
+  }
+}
+
+.section-sub-copy {
+  font-size: 32px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  @include breakpoint($phone-lg) {
+    font-size: 20px;
+  }
+}

@@ -1,0 +1,31 @@
+
+.square {
+  background-color: #aec2eb;
+  display: inline-block;
+  font-size: 12px;
+  color: black;
+  border: 2px solid;
+  height: 70px;
+}
+
+.square-label {
+  background-color: #1a3261;
+  display: inline-block;
+  font-size: 16px;
+  color: white;
+  border: 2px solid;
+  height: 70px;
+}
+
+.square-grid {
+  display: grid;
+  grid-template-columns: auto;
+  background-color: #2196F3;
+  padding: 10px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.board-row {
+
+}
