@@ -34,6 +34,7 @@ h5 {
 
 body,
 p {
+  color: $dark-grey;
   font-family: 'Open Sans', sans-serif;
   line-height: 1.8;
 }
@@ -102,18 +103,34 @@ button {
 }
 
 .section-title {
-  font-size: 48px;
-  font-weight: 600;
+  color: #05386b;
+  font-size: 36px;
+  font-weight: 700;
   margin-bottom: 16px;
   @include breakpoint($phone-lg) {
     font-size: 30px;
   }
 }
 
+.section-title-decorate {
+  border-bottom: 4px solid $brand-green;
+  width: 12%;
+}
+
 .section-sub-copy {
   font-size: 32px;
   font-weight: 400;
   margin-bottom: 10px;
+  @include breakpoint($phone-lg) {
+    font-size: 20px;
+  }
+}
+
+.column-title {
+  color: $dark-grey;
+  font-size: 26px;
+  font-weight: 500;
+  margin-bottom: 16px;
   @include breakpoint($phone-lg) {
     font-size: 20px;
   }

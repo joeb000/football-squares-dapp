@@ -1,3 +1,22 @@
 .component__info {
-  height: 900px;
+  background-color: $light-grey;
+  &--row {
+    &.title-row {
+      text-align: center;
+    }
+    &.column-row {
+      text-align: center;
+      margin-top: 60px;
+      .info-icon {
+        width: 122px;
+        margin-bottom: 40px;
+      }
+      .fa {
+        color: $brand-green;
+        font-size: 110px;
+        margin-bottom: 40px;
+      }
+    }
+  }
+  @extend .section-padding;
 }
