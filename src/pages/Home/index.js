@@ -32,6 +32,10 @@ class Home extends Component {
                 </div>
               </div>
             </section>
+
+            <section className="component__info">
+              
+            </section>
             {/* <Events/> */}
           </div>
 

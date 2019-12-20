@@ -1,5 +1,6 @@
 .navbar {
-  border-bottom: 1.5px solid $brand-blue;
+  border-bottom: 1.5px solid $brand-green;
+  height: 90px;
   .navbar-brand {
     &:focus {
       color: rgba(0,0,0,0);
@@ -19,6 +20,8 @@
     border-color: rgba(0,0,0,0);
   }
   .navbar-collapse {
+    // change on mobile
+    margin-right: -80px;
     .navbar-nav {
       margin-left: auto;
       @include breakpoint-min($tablet-lg-landscape) {
@@ -47,5 +50,24 @@
   button {
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.12) !important;
   }
+  balance-tab {
+    width: 100px;
+    background-color: blue;
+    z-index: 1000000;
+    position: fixed;
+    margin-top: 90px;
+    float: right;
+  }
 }
 
+.balance-tab {
+  color: white;
+  background-color: $brand-green;
+  font-size: 16px;
+  text-transform: uppercase;
+  z-index: 1000000;
+  padding: 8px 18px;
+  border-bottom-left-radius: 20px;
+  margin-top: 136px;
+  margin-right: -16px;
+}
