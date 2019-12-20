@@ -9,7 +9,6 @@ const Context = React.createContext();
 
 export class MyWeb3Provider extends Component {
   constructor(props) {
-    console.log("CONSTRUCT")
     super(props);
     this.state = {
       loaded: false,

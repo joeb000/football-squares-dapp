@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { MyWeb3Consumer } from "../../Web3Context"
 
 class Tapper extends Component {
 

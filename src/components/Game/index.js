@@ -50,18 +50,11 @@ export default class Game extends React.Component {
       gameData: data
     })
 
-
-    let sqVals = []
-    for (let i = 0; i < 100; i++) {
-      const a = await this.props.footballContract.methods.getSquareValue(this.props.gid, i).call();
-      sqVals.push(a)
-    }
-
-
+    const a = await this.props.footballContract.methods.getGameSquareValues(this.props.gid).call();
     this.setState({
       columns: cols,
       rows,
-      sqVals
+      sqVals:a
     });
   }
 
