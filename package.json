@@ -2,7 +2,7 @@
   "name": "football-squares-dapp",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://joeb000.github.io/football-squares-dapp",
+  "homepage": "http://ethfootball.com",
   "dependencies": {
     "@reach/router": "^1.2.1",
     "@status-im/subspace": "^1.1.1",
