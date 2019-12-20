@@ -1,5 +1,5 @@
 import React from 'react';
-import "./index.css"
+// import "./index.css"
 
 function Square(props) {
   return (
@@ -11,9 +11,11 @@ function Square(props) {
 
 function SquareLabel(props) {
   return (
-    <button className="square-label">
-      {props.value}
-    </button>
+    <div className="">
+      <button className="square-label">
+        {props.value}
+      </button>
+    </div>
   );
 }
 
@@ -25,7 +27,6 @@ export default class Board extends React.Component {
     };
   }
   componentDidUpdate = async () => {
-
     if (this.props.columnLabels && this.props.rowLabels && this.state.squareGrid.length === 0) {
       this.createSquareGrid()
     }
