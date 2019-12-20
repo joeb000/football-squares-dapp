@@ -10,7 +10,7 @@ function Header() {
     
     <div>
       <header>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className="navbar navbar-expand-lg fixed-top navbar-light bg-light">
           <a className="navbar-brand" href="/"><img className="nav-logo" src={logo} alt={"logo"}/> </a>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
@@ -18,12 +18,15 @@ function Header() {
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
 
             <div className="navbar-nav">
-              <Balance />
+              
               <Link className="nav-item nav-link" to="/create"><button className="btn-primary">Create A Game</button></Link>
               <Link className="nav-item nav-link" to="/list"><button className="btn-tertiary">Join A Game</button></Link>
               <Link className="nav-item nav-link" to="/faucet"><button className="btn-tertiary">Faucet</button></Link>
 
             </div>
+          </div>
+          <div className="balance-tab">
+            <Balance />
           </div>
         </nav>
       </header>
