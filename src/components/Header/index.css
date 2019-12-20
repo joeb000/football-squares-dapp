@@ -8,6 +8,29 @@
     font-size: 20px;
     color: white;
   }
+
+  .filler-div {
+    background-color: #717a8d;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: right;
+    justify-content: right;
+
+  }
+
+
+  .balance-div {
+    background-color: #db3f61;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: right;
+    justify-content: right;
+
+  }
   a {
     color: pink;
     text-decoration:  none;

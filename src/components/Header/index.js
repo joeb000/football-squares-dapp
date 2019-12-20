@@ -8,8 +8,10 @@ function Header() {
       <header className="App-header">
       <Link to="/">Home</Link> |
       <Link to="/create">Create</Link> |
-      <Link to="/">Game List</Link>
-
+      <Link to="/Faucet">Faucet</Link>
+      <div className="filler-div">
+        <div className="balance-div">balance here</div>
+      </div>
       </header>
     </div>
   );

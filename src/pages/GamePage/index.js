@@ -1,10 +1,6 @@
-import './App.css';
-import Game from './components/Game';
-
+import Game from '../../components/Game';
 import React from "react";
-
-import { MyWeb3Consumer } from './Web3Context';
-
+import { MyWeb3Consumer } from '../../Web3Context';
 
 const Dapp = (props) => (
   <MyWeb3Consumer>
@@ -12,7 +8,6 @@ const Dapp = (props) => (
       if (!loaded) {
         return (<div>Loading contracts from Context</div>)
       }
-      console.log(loaded, tokenContract)
       return (
         <div className="App">
           <h1>Football Squares Dapp context!</h1>
@@ -24,7 +19,5 @@ const Dapp = (props) => (
     }}
   </MyWeb3Consumer>
 );
-
-
 
 export default Dapp;

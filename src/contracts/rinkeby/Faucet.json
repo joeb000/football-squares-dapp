@@ -1,0 +1,117 @@
+{
+    "contractName": "Faucet",
+    "name": "Faucet",
+    "abi": [
+        {
+            "constant": false,
+            "inputs": [
+                {
+                    "name": "_a",
+                    "type": "address"
+                },
+                {
+                    "name": "_amt",
+                    "type": "uint256"
+                }
+            ],
+            "name": "set",
+            "outputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+            "signature": "0x3825d828"
+        },
+        {
+            "constant": true,
+            "inputs": [],
+            "name": "remaining",
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+            "signature": "0x55234ec0"
+        },
+        {
+            "constant": true,
+            "inputs": [],
+            "name": "owner",
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+            "signature": "0x8da5cb5b"
+        },
+        {
+            "constant": true,
+            "inputs": [],
+            "name": "amount",
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+            "signature": "0xaa8c217c"
+        },
+        {
+            "constant": false,
+            "inputs": [
+                {
+                    "name": "newOwner",
+                    "type": "address"
+                }
+            ],
+            "name": "transferOwnership",
+            "outputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+            "signature": "0xf2fde38b"
+        },
+        {
+            "constant": true,
+            "inputs": [],
+            "name": "erc20TokenAddress",
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+            "signature": "0xf835cd3c"
+        },
+        {
+            "constant": false,
+            "inputs": [],
+            "name": "tap",
+            "outputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+            "signature": "0xfd221031"
+        }
+    ],
+    "bytecode": "6080604052600080546001600160a01b03191633179055610359806100256000396000f3fe608060405234801561001057600080fd5b506004361061007d5760003560e01c8063aa8c217c1161005b578063aa8c217c146100ee578063f2fde38b146100f6578063f835cd3c1461011c578063fd221031146101245761007d565b80633825d8281461008257806355234ec0146100b05780638da5cb5b146100ca575b600080fd5b6100ae6004803603604081101561009857600080fd5b506001600160a01b03813516906020013561012c565b005b6100b8610169565b60408051918252519081900360200190f35b6100d26101e8565b604080516001600160a01b039092168252519081900360200190f35b6100b86101f7565b6100ae6004803603602081101561010c57600080fd5b50356001600160a01b03166101fd565b6100d2610242565b6100ae610251565b6000546001600160a01b0316331461014357600080fd5b600180546001600160a01b0319166001600160a01b039390931692909217909155600255565b60015460408051600160e01b6370a0823102815230600482015290516000926001600160a01b0316916370a08231916024808301926020929190829003018186803b1580156101b757600080fd5b505afa1580156101cb573d6000803e3d6000fd5b505050506040513d60208110156101e157600080fd5b5051905090565b6000546001600160a01b031681565b60025481565b6000546001600160a01b0316331461021457600080fd5b6001600160a01b0381161561023f57600080546001600160a01b0319166001600160a01b0383161790555b50565b6001546001600160a01b031681565b60015460025460408051600160e01b63a9059cbb0281523360048201526024810192909252516001600160a01b039092169163a9059cbb916044808201926020929091908290030181600087803b1580156102ab57600080fd5b505af11580156102bf573d6000803e3d6000fd5b505050506040513d60208110156102d557600080fd5b505161032b5760408051600160e51b62461bcd02815260206004820152600f60248201527f7472616e73666572206661696c65640000000000000000000000000000000000604482015290519081900360640190fd5b56fea165627a7a723058202df838fa6be7ce8d7727a716c3ee4d18f5bdbeb845f9a8a84e43c704bf5d68800029",
+    "networks": {
+        "4": {
+            "address": "0x34319CE659D0642a7C076d0115E0719704E56568",
+            "transactionHash": "0x7a81a8c6f672ad79c8eb73513564c0e5ad1024a069dba48ea5197c782002efd6"
+        }
+    }
+}
