@@ -22,7 +22,6 @@ export default class Game extends React.Component {
   }
 
   submitTransaction = async () => {
-    console.log("sh",this.state.clickedSquare)
     this.props.footballContract.methods.pickSquareValue(this.props.gid, this.state.clickedSquare).send({ from: window.ethereum.selectedAddress });
   };
 

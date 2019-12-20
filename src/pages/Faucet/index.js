@@ -8,8 +8,8 @@ class Tapper extends Component {
   }
 
   submitTransaction = async () => {
-    console.log("tap")
     this.props.faucetContract.methods.tap().send({ from: window.ethereum.selectedAddress });
+    this.props.tokenContract.methods.approve(this.props.squaresContract._address, 10000000).send({ from: window.ethereum.selectedAddress });
   };
 
   render() {
@@ -17,7 +17,7 @@ class Tapper extends Component {
       <div className="tap-button-div">
         <button onClick={() => this.submitTransaction()}>
           TAP IT
-            </button>
+        </button>
       </div>
     );
   }
@@ -26,7 +26,7 @@ class Tapper extends Component {
 
 const Faucet = (props) => (
   <MyWeb3Consumer>
-    {({ loaded, faucetContract }) => {
+    {({ loaded, faucetContract, tokenContract, squaresContract }) => {
       if (!loaded) {
         return (<div>Loading contracts from Context</div>)
       }
@@ -34,7 +34,7 @@ const Faucet = (props) => (
         <div className="faucet-page">
           <h1>Football Token Faucet</h1>
           <div>Welcome to the "Football Token" Faucet, Football token is an ERC20 token which is the default token for paying for squares. Tap this faucet to get 1000 football token.</div>
-          <Tapper faucetContract={faucetContract} />
+          <Tapper faucetContract={faucetContract} tokenContract={tokenContract} squaresContract={squaresContract}/>
         </div>
       )
     }}
