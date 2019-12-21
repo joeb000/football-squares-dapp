@@ -12,7 +12,7 @@ const Dapp = (props) => (
         <div className="App">
           <h1>Football Squares Dapp context!</h1>
           <div>
-            <Game token={tokenContract} footballContract={squaresContract} gid={props.gid} />
+            <Game tokenContract={tokenContract} footballContract={squaresContract} gid={props.gid} />
           </div>
         </div>
       )

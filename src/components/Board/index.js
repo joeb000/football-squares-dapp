@@ -11,11 +11,9 @@ function Square(props) {
 
 function SquareLabel(props) {
   return (
-    <div className="">
       <button className="square-label">
         {props.value}
       </button>
-    </div>
   );
 }
 
