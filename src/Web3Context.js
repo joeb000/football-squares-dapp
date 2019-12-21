@@ -6,7 +6,6 @@ import FaucetContract from "./contracts/rinkeby/Faucet.json";
 
 const Context = React.createContext();
 
-
 export class MyWeb3Provider extends Component {
   constructor(props) {
     super(props);
@@ -41,7 +40,6 @@ export class MyWeb3Provider extends Component {
       // Get the contract instance.
       const networkId = await web3.eth.net.getId();
 
-      console.log("networkId", typeof networkId, networkId)
       const deployedNetwork = TokenContract.networks['4'];
       const tokenContract = new web3.eth.Contract(
         TokenContract.abi,
@@ -64,20 +62,13 @@ export class MyWeb3Provider extends Component {
       squaresContract.events.GameCreated({
         fromBlock: 0
       }, (error, event) => {
-        console.log(event)
-        console.log(this.state)
-
         let {gameId, owner, token, metadata} = event.returnValues
-        let g = {gameId, owner, token, metadata}
-        console.log(gameId)
-        
+        let g = {gameId, owner, token, metadata}        
         this.setState({ gameList: [...this.state.gameList, g] }) //simple value
-
       })
 
       // Set web3, accounts, and contract to the state, and then proceed with an
       // example of interacting with the contract's methods.
-      console.log("set ctx state", this.state.loaded)
       this.setState({ web3, accounts, squaresContract, tokenContract, faucetContract }, this.setLoaded);
     } catch (error) {
       // Catch any errors for any of the above operations.

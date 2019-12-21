@@ -25,16 +25,13 @@ export default class Game extends React.Component {
 
   submitTransaction = async () => {
     let allowed = await this.props.tokenContract.methods.allowance(window.ethereum.selectedAddress, this.props.footballContract.options.address).call();
-    console.log(typeof allowed)
-    if (parseInt(allowed) < parseInt(this.state.gameData.squarePrice)){
-      console.log("not approved enough")
+    if (parseInt(allowed) < parseInt(this.state.gameData.squarePrice)) {
       this.props.tokenContract.methods.approve(this.props.footballContract.options.address, this.state.gameData.squarePrice).send({ from: window.ethereum.selectedAddress });
     }
     this.props.footballContract.methods.pickSquareValue(this.props.gid, this.state.clickedSquare).send({ from: window.ethereum.selectedAddress });
   };
 
   showModal = (i) => {
-    console.log("showing modal")
     this.setState({ show: true, clickedSquare: i });
   };
 
@@ -49,6 +46,7 @@ export default class Game extends React.Component {
   showWinner = () => {
     this.setState({ showWinnerPanel: true });
   };
+
   checkBalance = async () => {
     //const response = await this.contextType.token.methods.balanceOf(this.props.accounts[0]).call();
     const cols = await this.props.footballContract.methods.getGameColumns(this.props.gid).call();
@@ -57,8 +55,6 @@ export default class Game extends React.Component {
     //console.log(rows)
 
     const data = await this.props.footballContract.methods.games(this.props.gid).call();
-    console.log("data", data)
-
 
     if (data.owner.toLowerCase() === window.ethereum.selectedAddress.toLowerCase()) {
       this.showOwner()
@@ -66,7 +62,8 @@ export default class Game extends React.Component {
 
 
     const winnerAddress = await this.props.footballContract.methods.getSquareValue(this.props.gid, parseInt(data.winningSquareNumber)).call()
-    console.log('winnerAddress',winnerAddress)
+
+
     if (winnerAddress.toLowerCase() === window.ethereum.selectedAddress.toLowerCase()) {
       this.showWinner()
     }
@@ -93,11 +90,11 @@ export default class Game extends React.Component {
               Submit
             </button>
           </Modal>
-          <WinnerPanel 
+          <WinnerPanel
             squaresContract={this.props.footballContract}
             gid={this.props.gid}
-            seletedSquare={-1} 
-            show={this.state.showWinnerPanel}/>
+            seletedSquare={-1}
+            show={this.state.showWinnerPanel} />
           <Board
             contract={this.props.footballContract}
             gid={this.props.gid}
@@ -106,11 +103,11 @@ export default class Game extends React.Component {
             squares={this.state.sqVals}
             onClick={i => this.handleClick(i)}
           />
-          <OwnerPanel 
+          <OwnerPanel
             squaresContract={this.props.footballContract}
             gid={this.props.gid}
-            seletedSquare={-1} 
-            show={this.state.showOwnerPanel}/>
+            seletedSquare={-1}
+            show={this.state.showOwnerPanel} />
         </div>
       </div>
     );
@@ -137,7 +134,7 @@ function GameMeta(props) {
   }
   return (
     <div className="game-meta">
-      Loading meta properties...
-          </div>
+      <span>Loading meta properties...</span>
+    </div>
   );
 }
