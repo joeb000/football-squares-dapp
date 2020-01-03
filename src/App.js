@@ -10,6 +10,8 @@ import Faucet from "./pages/Faucet"
 import GamePage from "./pages/GamePage"
 import GameList from "./pages/GameList"
 import CreateGame from "./pages/CreateGame"
+import Scratch from "./pages/Scratch"
+
 import { MyWeb3Provider } from "./Web3Context"
 function App() {
   return (
@@ -23,7 +25,7 @@ function App() {
           <CreateGame path="/create" />
           <Faucet path="/faucet" />
           <GameList path="/list" />
-
+          <Scratch path="/scratch" />
         </Router>
         <Footer />
       </MyWeb3Provider>
