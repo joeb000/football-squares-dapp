@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ProfileForm from "../../components/ProfileForm"
+import ProfileCard from "../../components/ProfileCard"
 // import BoxProfile from "../../misc/Profile";
 import "./index.css"
 class Scratch extends Component {
@@ -16,6 +17,7 @@ class Scratch extends Component {
                 />
 
                 <ProfileForm />
+                <ProfileCard />
             </div>
         );
     }
