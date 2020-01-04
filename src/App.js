@@ -13,6 +13,7 @@ import CreateGame from "./pages/CreateGame"
 import Scratch from "./pages/Scratch"
 
 import { MyWeb3Provider } from "./Web3Context"
+import ProfilePage from './pages/Profile';
 function App() {
   return (
     <div className="app-class">
@@ -26,6 +27,8 @@ function App() {
           <Faucet path="/faucet" />
           <GameList path="/list" />
           <Scratch path="/scratch" />
+          <ProfilePage path="/profile" />
+
         </Router>
         <Footer />
       </MyWeb3Provider>

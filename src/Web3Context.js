@@ -9,9 +9,13 @@ const Context = React.createContext();
 export class MyWeb3Provider extends Component {
   constructor(props) {
     super(props);
+    this.gatherData = this.gatherData.bind(this);
+
     this.state = {
       loaded: false,
-      gameList: []
+      gameList: [],
+      refresh: this.gatherData,
+      web3: null
     }
   }
   
@@ -27,18 +31,35 @@ export class MyWeb3Provider extends Component {
       games: gameEvent
     })
   }
-
-
   async componentDidMount() {
+    this.gatherData()
+  }
+
+  async componentDidUpdate() {
+    console.log("cpmp update")
+  }
+
+  async gatherData() {
     try {
-      // Get network provider and web3 instance.
-      const web3 = await getWeb3();
+      console.log("yo gathering")
+      // Get network provider and web3 instance
+      let web3
+      if (!this.state.web3){
+        console.log("web3")
+        web3 = await getWeb3();
+      } else {
+        console.log("2222web3")
+        web3 = this.state.web3
+      }
+      console.log("jojkoe")
 
       // Use web3 to get the user's accounts.
       const accounts = await web3.eth.getAccounts();
+      console.log("qqq")
 
       // Get the contract instance.
       const networkId = await web3.eth.net.getId();
+      console.log("YOOOOwtf22")
 
       const deployedNetwork = TokenContract.networks['4'];
       const tokenContract = new web3.eth.Contract(
@@ -58,7 +79,7 @@ export class MyWeb3Provider extends Component {
         faucetdNetwork && faucetdNetwork.address,
       );
 
-
+      console.log("YOOOOwtf2")
       squaresContract.events.GameCreated({
         fromBlock: 0
       }, (error, event) => {

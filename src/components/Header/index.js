@@ -22,6 +22,7 @@ function Header() {
               <Link className="nav-item nav-link" to="/create"><button className="btn-primary">Create A Game</button></Link>
               <Link className="nav-item nav-link" to="/list"><button className="btn-tertiary">Join A Game</button></Link>
               <Link className="nav-item nav-link" to="/faucet"><button className="btn-tertiary">Faucet</button></Link>
+              <Link className="nav-item nav-link" to="/profile"><button className="btn-tertiary">Profile</button></Link>
 
             </div>
           </div>

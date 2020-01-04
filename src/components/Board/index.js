@@ -1,10 +1,11 @@
 import React from 'react';
-// import "./index.css"
+import "./index.css"
+import ProfileCard from "../ProfileCard"
 
 function Square(props) {
   return (
     <button className="square" onClick={props.onClick}>
-      {props.value}
+      <ProfileCard address={props.value} />
     </button>
   );
 }
@@ -62,9 +63,9 @@ export default class Board extends React.Component {
     //let x = 10 * c + r
     let addr = this.props.squares[n]
 
-    if (addr && /^0x[a-fA-F0-9]{40}$/.test(addr)) {
-      addr = addr.slice(0, 4) + ".." + addr.slice(38)
-    }
+    // if (addr && /^0x[a-fA-F0-9]{40}$/.test(addr)) {
+    //   addr = addr.slice(0, 4) + ".." + addr.slice(38)
+    // }
     return (
       <Square
         key={uniqueI.toString()}
