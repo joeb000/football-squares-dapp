@@ -21,7 +21,7 @@
   }
   .navbar-collapse {
     // change on mobile
-    margin-right: -100px;
+    // margin-right: -100px;
     .navbar-nav {
       margin-left: auto;
       @include breakpoint-min($tablet-lg-landscape) {
@@ -48,7 +48,7 @@
     }
   }
   button {
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.12) !important;
+    box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.12) !important;
   }
   balance-tab {
     width: 100px;
