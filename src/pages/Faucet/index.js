@@ -28,9 +28,11 @@ const Faucet = (props) => (
       }
       return (
         <div className="faucet-page">
+          <section className="section-padding">
           <h1>Football Token Faucet</h1>
           <div>Welcome to the "Football Token" Faucet, Football token is an ERC20 token which is the default token for paying for squares. Tap this faucet to get 1000 football token.</div>
           <Tapper faucetContract={faucetContract} tokenContract={tokenContract} squaresContract={squaresContract}/>
+          </section>
         </div>
       )
     }}

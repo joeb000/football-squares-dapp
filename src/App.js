@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import TempSpace from './misc/TempSpace';
+// import TempSpace from './misc/TempSpace';
 
 import './App.css';
 import { Router } from "@reach/router"
@@ -19,7 +19,7 @@ function App() {
     <div className="app-class">
       <MyWeb3Provider>
         <Header />
-        <TempSpace  />
+        {/* <TempSpace  /> */}
         <Router>
           <Home path="/" />
           <GamePage path="game/:gid" />

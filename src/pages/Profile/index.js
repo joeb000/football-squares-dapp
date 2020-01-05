@@ -9,6 +9,7 @@ class ProfilePage extends Component {
         return (
 
             <div>
+                <section className="section-padding">
                 <h1>Profile Page</h1>
                 <h2>Create Profile:</h2>
                 <ProfileForm />
@@ -24,7 +25,7 @@ class ProfilePage extends Component {
 
                     }}
                 </MyWeb3Consumer>
-
+                </section> 
             </div>
 
         );

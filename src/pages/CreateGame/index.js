@@ -11,7 +11,9 @@ class Create extends Component {
   render() {
     return (
       <div>
+        <section className="section-padding">
         <Form squaresContract={this.props.squaresContract} defaultTokenAddress={this.props.tokenContract.options.address} defaultTokenName="Football Token"/>
+        </section>
       </div>
     );
   }
