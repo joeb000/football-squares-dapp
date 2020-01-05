@@ -14,7 +14,7 @@ export class MyWeb3Provider extends Component {
     this.state = {
       loaded: false,
       gameList: [],
-      refresh: this.gatherData,
+      refresh: ()=> {},
       web3: null
     }
   }
