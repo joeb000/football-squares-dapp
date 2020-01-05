@@ -45,17 +45,17 @@ class Home extends Component {
                   </div>
                 </div>
                 <div className="row component__info--row column-row">
-                  <div className="col-4 component__info--col">
+                  <div className="col-lg-4 col-sm-12 component__info--col">
                     <img className="info-icon" src={icon} alt={"metamask icon"}/>
                     <h3 className="column-title">Requires MetaMask</h3>
                     <p>Bacon ipsum dolor amet jowl salami andouille ham. Ground round bacon ribeye pastrami rump, meatball picanha short loin cow kevin ham. Tail buffalo beef ribs ham hock strip steak prosciutto. Picanha rump frankfurter pork belly filet mignon. Capicola leberkas brisket turkey pastrami. Corned beef porchetta kevin ham.</p>
                   </div>
-                  <div className="col-4 component__info--col">
+                  <div className="col-lg-4 col-sm-12 component__info--col">
                     <i class="fa fa-users" aria-hidden="true"></i>
                     <h3 className="column-title">Invite Friends!</h3>
                     <p>Bacon ipsum dolor amet jowl salami andouille ham. Ground round bacon ribeye pastrami rump, meatball picanha short loin cow kevin ham. Tail buffalo beef ribs ham hock strip steak prosciutto. Picanha rump frankfurter pork belly filet mignon. Capicola leberkas brisket turkey pastrami. Corned beef porchetta kevin ham.</p>
                   </div>
-                  <div className="col-4 component__info--col">
+                  <div className="col-lg-4 col-sm-12 component__info--col">
                     <i class="fa fa-trophy" aria-hidden="true"></i>
                     <h3 className="column-title">Join Current Games!</h3>
                     <p>Bacon ipsum dolor amet jowl salami andouille ham. Ground round bacon ribeye pastrami rump, meatball picanha short loin cow kevin ham. Tail buffalo beef ribs ham hock strip steak prosciutto. Picanha rump frankfurter pork belly filet mignon. Capicola leberkas brisket turkey pastrami. Corned beef porchetta kevin ham.</p>

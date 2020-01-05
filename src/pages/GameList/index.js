@@ -10,10 +10,12 @@ const Dapp = (props) => (
       }
       return (
         <div className="App">
+          <section className="section-padding">
           <h1>Football Squares Active Games</h1>
           <div>
             <Events />
           </div>
+          </section>
         </div>
       )
     }}

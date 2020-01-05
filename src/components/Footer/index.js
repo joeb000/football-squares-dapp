@@ -4,9 +4,17 @@ import "./index.css"
 function Footer() {
   return (
     
-    <div className="footer-div">
+    <div>
       <footer>
-          <span>FOOOOOOOOTER</span>
+          <section className="footer-ribbon">
+            <div className="container">
+              <div className="row">
+                <div className="col-12">
+                  <p className="copyright">2020 ETH Football All Rights Reserved</p>
+                </div>
+              </div>
+            </div>
+          </section>
       </footer>
     </div>
 

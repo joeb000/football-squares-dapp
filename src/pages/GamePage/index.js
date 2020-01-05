@@ -10,10 +10,12 @@ const Dapp = (props) => (
       }
       return (
         <div className="App">
+          <section className="section-padding">
           <h1>Football Squares Dapp context!</h1>
           <div>
-            <Game tokenContract={tokenContract} footballContract={squaresContract} gid={props.gid} />
+            <Game tokenContract={tokenContract} footballContract={squaresContract} gid={props.gid} /> 
           </div>
+          </section>
         </div>
       )
     }}
