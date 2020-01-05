@@ -15,12 +15,21 @@ export default class Game extends React.Component {
       show: false,
       showWinnerPanel: false
     };
+    this.handleClick = this.handleClick.bind(this);
+
+  }
+
+  async componentDidMount() {
     this.checkBalance()
   }
 
   handleClick(i) {
     console.log(i)
-    this.showModal(i)
+    if (i === 0) {
+      this.checkBalance()
+    } else {
+      this.showModal(i)
+    }
   }
 
   submitTransaction = async () => {
@@ -48,6 +57,7 @@ export default class Game extends React.Component {
   };
 
   checkBalance = async () => {
+    console.log('balancecheck')
     //const response = await this.contextType.token.methods.balanceOf(this.props.accounts[0]).call();
     const cols = await this.props.footballContract.methods.getGameColumns(this.props.gid).call();
     //console.log(cols)

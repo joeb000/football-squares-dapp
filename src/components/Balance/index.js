@@ -21,7 +21,7 @@ class ReadBalance extends Component {
         return (<div></div>)
     }
     return (
-        <div className="balance-div">balance: {this.state.balance}</div>
+        <div className="balance-div" onClick={this.props.onClick}>balance: {this.state.balance}</div>
     );
   }
 }
@@ -29,13 +29,13 @@ class ReadBalance extends Component {
 
 const Balance = (props) => (
   <MyWeb3Consumer>
-    {({ loaded, tokenContract }) => {
+    {({ refresh, loaded, tokenContract }) => {
       if (!loaded) {
         return (<div></div>)
       }
       return (
        
-          <ReadBalance tokenContract={tokenContract} />
+          <ReadBalance tokenContract={tokenContract} onClick={refresh}/>
 
       )
     }}

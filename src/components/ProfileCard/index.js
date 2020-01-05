@@ -9,19 +9,42 @@ class GetProfile extends Component {
       name: null,
       imageURL: null,
       profileLoaded: false,
+      isEmptyAddress: false,
+      isUnknownAddress: false
     }
-    this.getProfile()
+    //this.getProfile()
   }
 
-  getProfile = async () => {
-    let response = await fetch('http://api.decentprofile.com/profiles/address/' + this.props.address)
-    let data = await response.json()
-    console.log(data, "x")
-    this.setState({
-      name: data.name,
-      imageURL: "http://api.decentprofile.com/images/" + data.image,
-      profileLoaded: true
-    })
+  componentDidMount = async () => {
+
+    if (this.props.address && /^0x[a-fA-F0-9]{40}$/.test(this.props.address)) {
+      let shortenedAddress = this.props.address.slice(0, 4) + ".." + this.props.address.slice(38)
+      this.setState({ shortenedAddress })
+    }
+    if (this.props.address === "0x0000000000000000000000000000000000000000") {
+      console.log("empyt")
+      this.setState({
+        isEmptyAddress: true,
+        profileLoaded: true
+      })
+    } else {
+
+
+      let response = await fetch('https://api.decentprofile.com/profiles/address/' + this.props.address)
+      if (response.status !== 200) {
+        this.setState({
+          isUnknownAddress: true,
+          profileLoaded: true
+        })
+        return
+      }
+      let data = await response.json()
+      this.setState({
+        name: data.name,
+        imageURL: "https://api.decentprofile.com/images/" + data.image,
+        profileLoaded: true
+      })
+    }
   };
 
   render() {
@@ -35,9 +58,16 @@ class GetProfile extends Component {
         </div>
       );
     }
+    if (this.state.isUnknownAddress) {
+      return (
+        <div className="unknown-address-div">
+          <span>{this.state.shortenedAddress}</span>
+        </div>
+      );
+    }
     return (
       <div className="profile-div">
-        <span>Name: {this.state.name}</span>
+        <span>{this.state.name}</span>
         <img className="profile-card-image"
           src={this.state.imageURL}
           alt="new"
@@ -61,4 +91,4 @@ const ProfileData = (props) => (
   </MyWeb3Consumer>
 );
 
-export default ProfileData;
+export default GetProfile;

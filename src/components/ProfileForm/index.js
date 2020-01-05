@@ -64,7 +64,7 @@ class CreateForm extends Component {
           formData.append("name", this.state.name);
           formData.append("address", this.state.address);
 
-          req.open("POST", "http://api.decentprofile.com/profiles/upload");
+          req.open("POST", "https://api.decentprofile.com/profiles/upload");
           req.send(formData);
         });
       }
